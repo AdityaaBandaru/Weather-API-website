@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Indian High School Dubai Weather</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="header-card">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1>The Indian High School Dubai Weather</h1>
+          <p class="subtitle">Live atmospheric metrics for The Indian High School Dubai (IHS Dubai), Oud Metha Rd - Oud Metha - Dubai</p>
+        </div>
+        <div class="controls">
+          <span class="auto-refresh">Auto refresh every second</span>
+          <span id="last-updated">Last updated: --</span>
+        </div>
+      </div>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section class="summary-grid">
+      <article class="metric">
+        <div class="metric-header">
+          <span class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 14.76V5a2 2 0 1 0-4 0v9.76a4 4 0 1 0 4 0Z" />
+              <path d="M10 9h4" />
+            </svg>
+          </span>
+          <h2>Temperature</h2>
+        </div>
+        <p id="temperature" class="value">-- °C</p>
+        <p class="detail">Feels like <span id="apparent">-- °C</span></p>
+      </article>
+      <article class="metric">
+        <div class="metric-header">
+          <span class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3.5c-.6 1.2-6 6.5-6 10a6 6 0 0 0 12 0c0-3.5-5.4-8.8-6-10Z" />
+            </svg>
+          </span>
+          <h2>Humidity</h2>
+        </div>
+        <p id="humidity" class="value">-- %</p>
+        <p class="detail">Cloud cover <span id="cloud-cover">-- %</span></p>
+      </article>
+      <article class="metric">
+        <div class="metric-header">
+          <span class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 18.5c.7 0 1.3-.6 1.3-1.3 0-.7-.6-1.3-1.3-1.3-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3Z" />
+              <path d="M12 21c.9 0 1.6-.7 1.6-1.6S12.9 17.8 12 17.8s-1.6.7-1.6 1.6S11.1 21 12 21Z" />
+              <path d="M16.7 18.5c.7 0 1.3-.6 1.3-1.3 0-.7-.6-1.3-1.3-1.3-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3Z" />
+              <path d="M18 9a4 4 0 0 0-3.8-3A5 5 0 0 0 9 4c-2.5 0-4.5 2-4.5 4.5 0 .6.1 1.1.3 1.7" />
+              <path d="M18 9a3.5 3.5 0 1 1 .5 6.9" />
+            </svg>
+          </span>
+          <h2>Precipitation</h2>
+        </div>
+        <p id="precipitation" class="value">-- mm</p>
+        <p class="detail">Probability <span id="precip-prob">-- %</span></p>
+      </article>
+      <article class="metric">
+        <div class="metric-header">
+          <span class="metric-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h13.5a3 3 0 1 0-2.8-4" />
+              <path d="M3 16h10.5a3 3 0 1 1-2.7 4" />
+            </svg>
+          </span>
+          <h2>Wind</h2>
+        </div>
+        <p id="wind-speed" class="value">-- km/h</p>
+        <p class="detail">Direction <span id="wind-direction">--°</span></p>
+      </article>
+    </section>
+
+    <section class="forecast">
+      <header>
+        <h2>Next 12 hours snapshot</h2>
+        <p class="subtitle">Hourly temperature, humidity, and precipitation probability</p>
+      </header>
+      <div class="forecast-table-wrapper">
+        <table class="forecast-table">
+          <thead>
+            <tr>
+              <th scope="col">Local time</th>
+              <th scope="col">Temp (°C)</th>
+              <th scope="col">Humidity (%)</th>
+              <th scope="col">Precip prob (%)</th>
+              <th scope="col">Precip (mm)</th>
+            </tr>
+          </thead>
+          <tbody id="forecast-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
